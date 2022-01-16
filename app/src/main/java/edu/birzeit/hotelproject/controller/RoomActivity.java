@@ -40,7 +40,7 @@ public class RoomActivity extends AppCompatActivity {
 
     private Gson gson = new Gson();
     private List<String> rooms = new ArrayList<>();
-    String url = "http://10.0.2.2:80/hotel_app_backend/controllers/RoomController/get.php";
+    String url = "http://10.0.2.2:80/hotalAppBackend/controllers/RoomController/get.php";
     List<Room>roomList=new ArrayList<>();
     List<Room>singleRoom,doubleRoom;
     RecyclerView recycler;

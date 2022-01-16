@@ -35,7 +35,7 @@ public class AllRservationActivity extends AppCompatActivity {
     private RequestQueue queue;
     private Gson gson = new Gson();
     private List<String> bookingsString = new ArrayList<>();
-    String url = "http://10.0.2.2:80/hotel_app_backend/controllers/bookingController/get.php";
+    String url = "http://10.0.2.2:80/hotalAppBackend/controllers/bookingController/get.php";
     List<Reservations>books=new ArrayList<>();//this is will use in Recycler view.
     private RecyclerView recycler;
     List<Reservations>list= new ArrayList<>();

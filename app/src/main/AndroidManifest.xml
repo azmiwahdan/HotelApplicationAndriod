@@ -42,9 +42,6 @@
             android:name=".controller.RoomActivity"
             android:exported="true" />
         <activity
-            android:name=".controller.ReceptionActivity"
-            android:exported="true" />
-        <activity
             android:name=".controller.LogoutActivity"
             android:exported="true" />
         <activity

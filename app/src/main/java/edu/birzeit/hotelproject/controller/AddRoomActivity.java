@@ -70,7 +70,7 @@ public class AddRoomActivity extends AppCompatActivity {
     class PostRoom implements Runnable{
         @Override
         public void run() {
-            String url="http://10.0.2.2/hotel_app_backend/controllers/RoomController/post.php";
+            String url="http://10.0.2.2/hotalAppBackend/controllers/RoomController/post.php";
             RequestQueue queue = Volley.newRequestQueue(AddRoomActivity.this);
             StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
                 @Override

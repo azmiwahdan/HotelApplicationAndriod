@@ -28,7 +28,7 @@ public class AvailableRoomsActivity extends AppCompatActivity {
 
     public List<Room> available_rooms = new ArrayList<>();
     public Gson gsonObjectRoom = new Gson();
-    public static final String URL_CUSTOMER = "http://10.0.2.2:80/hotel_app_backend/controllers/RoomController/get.php";
+    public static final String URL_CUSTOMER = "http://10.0.2.2:80/hotalAppBackend/controllers/RoomController/get.php";
     public RecyclerView recyclerView;
     private RequestQueue queue;
 
