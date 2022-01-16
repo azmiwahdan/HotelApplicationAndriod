@@ -34,7 +34,7 @@ public class ReserveConfirmationActivity extends AppCompatActivity {
     private EditText customer_msg;
     private EditText customer_start_date;
     private EditText customer_end_date;
-    public String serverURL = "http://10.0.2.2/hotel_app_backend/controllers/reservationController/post.php";
+    public String serverURL = "http://10.0.2.2/hotel_app_backend/controllers/bookingController/post.php";
     public static final String USERNAME = "USERNAME";
     public static final String CREDIT_CARD = "CREDIT_CARD";
     public static final String PHONE_NUMBER = "PHONE_NUMBER";
