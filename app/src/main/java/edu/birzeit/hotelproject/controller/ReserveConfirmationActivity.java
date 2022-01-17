@@ -99,7 +99,6 @@ public class ReserveConfirmationActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(),"Room reserved successfully",Toast.LENGTH_SHORT).show();
-                Log.d("Yesss","HOORAAYY");
             }
         }, new Response.ErrorListener() {
             @Override

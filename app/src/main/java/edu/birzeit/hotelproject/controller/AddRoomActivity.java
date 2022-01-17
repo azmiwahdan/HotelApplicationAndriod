@@ -34,6 +34,7 @@ public class AddRoomActivity extends AppCompatActivity {
     private String roomDescription;
     private List<Customer>customerList;
     public static String EXTRA_MESSAGE;
+    private String room_reserve="not reserved";
     private Gson gson = new Gson();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

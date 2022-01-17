@@ -86,6 +86,7 @@ public class Room {
                 "Room ID : " + room_id + "\n" +
                 "Room Number : " + room_number + "\n" +
                 "Room Type : " + room_type + "\n" +
-                "Room Price : " + room_price;
+                "Room Price : " + room_price +"\n" +
+                        "is reserved :" + room_reserve;
     }
 }
