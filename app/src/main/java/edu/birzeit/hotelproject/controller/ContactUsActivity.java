@@ -55,7 +55,7 @@ public class ContactUsActivity extends AppCompatActivity {
     }
 
     public void send_btn(View view) {
-        Toast.makeText(this, "Thank you!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Thank you!", Toast.LENGTH_SHORT).show();//
 
     }
 }
