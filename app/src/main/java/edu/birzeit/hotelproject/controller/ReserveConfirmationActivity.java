@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import edu.birzeit.hotelproject.R;
+import edu.birzeit.hotelproject.models.UserInfoShared;
 
 public class ReserveConfirmationActivity extends AppCompatActivity {
 
@@ -34,12 +35,8 @@ public class ReserveConfirmationActivity extends AppCompatActivity {
     private EditText customer_msg;
     private EditText customer_start_date;
     private EditText customer_end_date;
-    public String serverURL = "http://10.0.2.2/hotalAppBackend/controllers/bookingController/post.php";
-    public static final String USERNAME = "USERNAME";
-    public static final String CREDIT_CARD = "CREDIT_CARD";
-    public static final String PHONE_NUMBER = "PHONE_NUMBER";
-    public static final String CUSTOMER_PREF = "CUSTOMER_PREF";
-    public static final String CUSTOMER_ID = "CUSTOMER_ID";
+    public String serverURL = "http://10.0.2.2/hotel_app_backend/controllers/reservationController/post.php";//
+    public UserInfoShared user_info = new UserInfoShared();
     String customer_id = "";
     private RequestQueue queue;
 
@@ -60,11 +57,12 @@ public class ReserveConfirmationActivity extends AppCompatActivity {
     }
 
     private void setEditTextFields() {
-        SharedPreferences sharedPreferences = getSharedPreferences(CUSTOMER_PREF,MODE_PRIVATE);
-        customer_username.setText(sharedPreferences.getString(USERNAME,""), TextView.BufferType.EDITABLE);
-        customer_credit.setText(sharedPreferences.getString(CREDIT_CARD,""), TextView.BufferType.EDITABLE);
-        customer_phone_number.setText(sharedPreferences.getString(PHONE_NUMBER,""), TextView.BufferType.EDITABLE);
-        customer_id = sharedPreferences.getString(CUSTOMER_ID,"");
+
+        SharedPreferences sharedPreferences = getSharedPreferences(user_info.getCustomerPref(),MODE_PRIVATE);
+        customer_username.setText(sharedPreferences.getString(user_info.getUSERNAME(),""), TextView.BufferType.EDITABLE);
+        customer_credit.setText(sharedPreferences.getString(user_info.getCreditCard(),""), TextView.BufferType.EDITABLE);
+        customer_phone_number.setText(sharedPreferences.getString(user_info.getPhoneNumber(),""), TextView.BufferType.EDITABLE);
+        customer_id = sharedPreferences.getString(user_info.getCustomerId(),"");
     }
 
 
@@ -96,11 +94,12 @@ public class ReserveConfirmationActivity extends AppCompatActivity {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, serverURL,
                 new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(),"Room reserved successfully",Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(),"Room reserved successfully",Toast.LENGTH_SHORT).show();
+                        Log.d("Yesss","HOORAAYY");
+                    }
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),"Error in reservation process",Toast.LENGTH_SHORT).show();

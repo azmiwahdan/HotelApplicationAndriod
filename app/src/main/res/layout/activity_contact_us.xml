@@ -73,8 +73,10 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
+                            android:id="@+id/customer_name"
                             android:background="@null"
                             android:hint="Your name"
+                            android:focusable="false"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:inputType="text"
@@ -130,6 +132,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:background="@null"
+                            android:id="@+id/customer_email"
                             android:hint="Email address"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -187,6 +190,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:background="@null"
+                            android:id="@+id/customer_topic"
                             android:hint="Topic"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -232,7 +236,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <EditText
-                            android:id="@+id/textArea_information"
+                            android:id="@+id/customer_msg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
