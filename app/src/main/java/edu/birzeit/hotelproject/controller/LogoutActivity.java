@@ -14,10 +14,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.birzeit.hotelproject.MainActivity;
 import edu.birzeit.hotelproject.R;
+import edu.birzeit.hotelproject.models.UserInfoShared;
 
 public class LogoutActivity extends AppCompatActivity {
 
     TextView logoutText;
+    public static final String CUSTOMER_PREF = "CUSTOMER_PREF";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +32,14 @@ public class LogoutActivity extends AppCompatActivity {
         logoutText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                user_logout_pref();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finishAffinity();
                 SharedPreferences pref = getSharedPreferences("CheckBox" , MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("rememberMe" , "false");
                 editor.apply();
-                finish();
+
             }
         });
 
@@ -74,4 +79,12 @@ public class LogoutActivity extends AppCompatActivity {
         });
 
     }
+
+    private void user_logout_pref() {
+        UserInfoShared userInfoShared = new UserInfoShared();
+        SharedPreferences sharedPreferences = getSharedPreferences(userInfoShared.getUserCheckSignPref(),MODE_PRIVATE);
+        sharedPreferences.edit().remove(userInfoShared.getUserCheckSign()).commit();
+    }
+
+
 }

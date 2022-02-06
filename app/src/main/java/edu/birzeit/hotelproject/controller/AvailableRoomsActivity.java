@@ -1,7 +1,10 @@
 package edu.birzeit.hotelproject.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -37,6 +41,42 @@ public class AvailableRoomsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_available_rooms);
+
+        BottomNavigationView BNV = findViewById(R.id.nav_id);
+        BNV.setSelectedItemId(R.id.roomsBooking);
+        BNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.homepage:
+                        startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.roomsBooking:
+                        startActivity(new Intent(getApplicationContext(), AvailableRoomsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.about:
+                        startActivity(new Intent(getApplicationContext(), AboutUsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.contactus:
+                        startActivity(new Intent(getApplicationContext(), ContactUsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(), LogoutActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
         recyclerView = findViewById(R.id.available_room_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         queue = Volley.newRequestQueue(this);

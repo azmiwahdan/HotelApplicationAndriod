@@ -3,7 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_add_room.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_all_rservation.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_available_rooms.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_book_details.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.14361702127659576" />
+        <entry key="app/src/main/res/layout/activity_customer.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_customer_details.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_logout.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_reception_menue.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.125" />
+        <entry key="app/src/main/res/menu/menu_nav.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>

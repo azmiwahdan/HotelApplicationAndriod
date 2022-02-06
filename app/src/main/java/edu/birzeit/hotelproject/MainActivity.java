@@ -31,17 +31,17 @@ import edu.birzeit.hotelproject.controller.ReceptionMenue;
 import edu.birzeit.hotelproject.controller.SignUpActivity;
 import edu.birzeit.hotelproject.models.Customer;
 import edu.birzeit.hotelproject.models.Receptionist;
+import edu.birzeit.hotelproject.models.UserInfoShared;
 import edu.birzeit.hotelproject.services.LoginService;
 
 public class MainActivity extends AppCompatActivity {
     EditText usernameEditText, passwordEditText;
-    public static final String USERNAME = "USERNAME";
-    public static final String PASSWORD = "PASSWORD";
-    public static final String CREDIT_CARD = "CREDIT_CARD";
-    public static final String PHONE_NUMBER = "PHONE_NUMBER";
-    public static final String CUSTOMER_ID = "CUSTOMER_ID";
-    public static final String CUSTOMER_PREF = "CUSTOMER_PREF";
+    UserInfoShared userInfoShared = new UserInfoShared();
+
+
     private SharedPreferences preferences;
+    private SharedPreferences sharedPreferences;
+    private  SharedPreferences.Editor shared_editor;
     private SharedPreferences.Editor editor;
     List<Receptionist> receptionistList = new ArrayList<>();
     List<Customer> customerList = new ArrayList<>();
@@ -55,17 +55,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        check_user_login();
 
         queue = Volley.newRequestQueue(this);
         setViews();
 
-
-
         setSharedPref();
+
         checkPreference();
+        GetData getData = new GetData();
+        Thread thread = new Thread(getData);
+        thread.start();
+
 
         Intent intent = getIntent();
         String message=intent.getStringExtra(SignUpActivity.EXTRA_MESSAGE);
@@ -75,9 +79,7 @@ public class MainActivity extends AppCompatActivity {
             passwordEditText.setText(customer.getCustomer_password());
         }
 
-        GetData getData = new GetData();
-        Thread thread = new Thread(getData);
-        thread.start();
+
 
         findViewById(R.id.text_create_account).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,9 +87,23 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 intent.putExtra(EXTRA_MESSAGE, customers);
                 startActivity(intent);
+                finish();
             }
         });
     }
+
+    private void check_user_login() {
+        SharedPreferences sharedPreferences = getSharedPreferences(userInfoShared.getUserCheckSignPref(),MODE_PRIVATE);
+//        String str = sharedPreferences.getString("USER_TRUE","not found");
+//        Log.d("Check_STR", str);
+        if(sharedPreferences.contains(userInfoShared.getUserCheckSign())){
+           Intent intent = new Intent(this,HomePageActivity.class);
+           startActivity(intent);
+           finish();
+        }
+
+    }
+
 
     private void setViews() {
         usernameEditText = findViewById(R.id.usernameId);
@@ -97,11 +113,14 @@ public class MainActivity extends AppCompatActivity {
     private void setSharedPref() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = preferences.edit();
+
+
     }
 
+
     private void checkPreference() {
-        String username = preferences.getString(USERNAME, "");
-        String password = preferences.getString(PASSWORD, "");
+        String username = preferences.getString(userInfoShared.getUSERNAME(), "");
+        String password = preferences.getString(userInfoShared.getPASSWORD(), "");
         usernameEditText.setText(username);
         passwordEditText.setText(password);
     }
@@ -110,22 +129,25 @@ public class MainActivity extends AppCompatActivity {
 
     // this is handler when user click log in
     public void signin_btn(View view) {
+        set_user_logged();
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
+        editor.putString("","");
 
         if (LoginService.isReceptionist(username, password, receptionistList)) {
             Log.d("username", username);
-            editor.putString(USERNAME, username);
-            editor.putString(PASSWORD, password);
+            editor.putString(userInfoShared.getUSERNAME(), username);
+            editor.putString(userInfoShared.getPASSWORD(), password);
 
             editor.commit();
             Intent intent = new Intent(this, ReceptionMenue.class);
             intent.putExtra(EXTRA_MESSAGE, customers);
             startActivity(intent);
+            finish();
         } else {
             if (LoginService.isCustomer(username, password, customerList)) {
-                editor.putString(USERNAME, username);
-                editor.putString(PASSWORD, password);
+                editor.putString(userInfoShared.getUSERNAME(), username);
+                editor.putString(userInfoShared.getPASSWORD(), password);
                 setSharedPrefCustomerCredit(username,password,customerList);
                 editor.commit();
                 Customer customer=LoginService.getCustomerByUsername(username,password,customerList);
@@ -133,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, HomePageActivity.class);
                 intent.putExtra(CUSTOMER,customerString);// this message will send to home activity ,then send to availableRooms activity,to save customer information.
                 startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(MainActivity.this, "you have to create account",
                         Toast.LENGTH_LONG).show();
@@ -143,14 +166,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void set_user_logged() {
+        SharedPreferences sharedPreferences = getSharedPreferences(userInfoShared.getUserCheckSignPref(),MODE_PRIVATE);
+        sharedPreferences.edit().putString(userInfoShared.getUserCheckSign(),"logged").commit();
+    }
+
     private void setSharedPrefCustomerCredit(String username, String password, List<Customer> customerList) {
-        SharedPreferences sharedPreferences = getSharedPreferences(CUSTOMER_PREF,MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(userInfoShared.getCustomerPref(),MODE_PRIVATE);
         SharedPreferences.Editor customer_editor = sharedPreferences.edit();
 
-        customer_editor.putString(CREDIT_CARD,getCustomerInfo(username,password,customerList,CREDIT_CARD));
-        customer_editor.putString(PHONE_NUMBER, getCustomerInfo(username,password,customerList,PHONE_NUMBER));
-        customer_editor.putString(CUSTOMER_ID,getCustomerInfo(username,password,customerList,CUSTOMER_ID));
-        customer_editor.putString(USERNAME,username);
+        customer_editor.putString(userInfoShared.getCreditCard(),getCustomerInfo(username,password,customerList,userInfoShared.getCreditCard()));
+        customer_editor.putString(userInfoShared.getPhoneNumber(), getCustomerInfo(username,password,customerList,userInfoShared.getPhoneNumber()));
+        customer_editor.putString(userInfoShared.getCustomerId(),getCustomerInfo(username,password,customerList,userInfoShared.getCustomerId()));
+        customer_editor.putString(userInfoShared.getUSERNAME(),username);
 
         customer_editor.apply();
         
@@ -161,13 +189,13 @@ public class MainActivity extends AppCompatActivity {
     private String getCustomerInfo(String userName , String userPass, List<Customer> customerList, String data ) {
         for (Customer customer : customerList){
             if (userName.equalsIgnoreCase(customer.getCustomer_username()) && customer.getCustomer_password().equalsIgnoreCase(userPass)){
-                if (data.equalsIgnoreCase(CREDIT_CARD)){
+                if (data.equalsIgnoreCase(userInfoShared.getCreditCard())){
                     return customer.getCustomer_visa();
                 }
-                else if (data.equalsIgnoreCase(PHONE_NUMBER)){
+                else if (data.equalsIgnoreCase(userInfoShared.getPhoneNumber())){
                     return customer.getCustomer_phone();
                 }
-                else if(data.equalsIgnoreCase(CUSTOMER_ID)){
+                else if(data.equalsIgnoreCase(userInfoShared.getCustomerId())){
                     return String.valueOf(customer.getCustomer_id());
                 }
             }
