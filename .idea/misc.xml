@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/layout/activity_reception_menue.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/layout/activity_search_room.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_add_room.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_all_rservation.xml" value="0.125" />
