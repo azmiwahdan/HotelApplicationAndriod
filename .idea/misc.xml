@@ -16,11 +16,21 @@
         <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.14361702127659576" />
         <entry key="app/src/main/res/layout/activity_customer.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_customer_details.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.125" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_reception_menue.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.125" />
+=======
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11502435583629507" />
+        <entry key="app/src/main/res/layout/activity_reception_menue.xml" value="0.17753400471575334" />
+        <entry key="app/src/main/res/layout/activity_rooms.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21240942028985507" />
+        <entry key="app/src/main/res/layout/all_reservation_card.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/card.xml" value="0.16770833333333332" />
+>>>>>>> 205a7a9eff3b16cc45b28b755bbd101199148f7f
         <entry key="app/src/main/res/menu/menu_nav.xml" value="0.16770833333333332" />
       </map>
     </option>
