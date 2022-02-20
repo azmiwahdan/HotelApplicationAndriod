@@ -34,6 +34,7 @@
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11502435583629507" />
         <entry key="app/src/main/res/layout/activity_reception_menue.xml" value="0.17753400471575334" />
+        <entry key="app/src/main/res/layout/activity_room_details.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_rooms.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21240942028985507" />
