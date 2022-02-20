@@ -1,7 +1,10 @@
 package edu.birzeit.hotelproject.controller;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -18,6 +21,24 @@ public class CheckOutActivity extends AppCompatActivity {
 
     public void checkOutOnClick(View view) {
 
-        Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
+        showAlert("Information" , "Check Out successfully");
+    }
+
+    private void showAlert(String title, String message) {
+
+        AlertDialog alertDialog = new AlertDialog.Builder(CheckOutActivity.this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                        Intent intent = new Intent(CheckOutActivity.this , HomePageActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .create();
+        alertDialog.show();
+
     }
 }

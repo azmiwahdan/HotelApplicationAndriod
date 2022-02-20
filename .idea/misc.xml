@@ -3,11 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/drawable/background_btn.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/layout/activity_reception_menue.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/layout/activity_search_room.xml" value="0.19375" />
-        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/layout/card.xml" value="0.1" />
-        <entry key="..\:/Users/twitter/AndroidStudioProjects/HotelApplicationAndriod/app/src/main/res/layout/item.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/background_btn.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/background_page.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/homepage_style.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_account_.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_attach_money_.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_date_.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_email.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_exit.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_home.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_lock_.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_money.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_people.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_phone_.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_phone_msg.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_of_room.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/selector.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_add_room.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_all_rservation.xml" value="0.125" />
@@ -16,21 +30,20 @@
         <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.14361702127659576" />
         <entry key="app/src/main/res/layout/activity_customer.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_customer_details.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_forget1.xml" value="0.12291666666666666" />
+        <entry key="app/src/main/res/layout/activity_forget2.xml" value="0.17527173913043478" />
         <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.125" />
-<<<<<<< HEAD
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_reception_menue.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.125" />
-=======
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11502435583629507" />
         <entry key="app/src/main/res/layout/activity_reception_menue.xml" value="0.17753400471575334" />
+        <entry key="app/src/main/res/layout/activity_reserve_page_confirmation.xml" value="0.1852355072463768" />
+        <entry key="app/src/main/res/layout/activity_room_details.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_rooms.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/activity_search_room.xml" value="0.1852355072463768" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21240942028985507" />
         <entry key="app/src/main/res/layout/all_reservation_card.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/card.xml" value="0.16770833333333332" />
->>>>>>> 205a7a9eff3b16cc45b28b755bbd101199148f7f
         <entry key="app/src/main/res/menu/menu_nav.xml" value="0.16770833333333332" />
       </map>
     </option>

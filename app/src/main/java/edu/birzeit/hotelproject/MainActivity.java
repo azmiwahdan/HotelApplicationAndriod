@@ -26,6 +26,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.birzeit.hotelproject.controller.Forget1Activity;
+import edu.birzeit.hotelproject.controller.Forget2Activity;
 import edu.birzeit.hotelproject.controller.HomePageActivity;
 import edu.birzeit.hotelproject.controller.ReceptionMenue;
 import edu.birzeit.hotelproject.controller.SignUpActivity;
@@ -285,6 +287,11 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
 
 
+    }
+
+    public void forgetPage(View view) {
+        Intent intent = new Intent(this, Forget1Activity.class);
+        startActivity(intent);
     }
 
     class GetData implements Runnable {

@@ -85,7 +85,7 @@ public class LogoutActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        showAlert("info" , response);
+                        //showAlert("info" , response);
                         Log.d("response = " , response);
 
                        try {
