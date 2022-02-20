@@ -44,6 +44,10 @@ public class ReceptionMenue extends AppCompatActivity {
                         Intent intent2 = new Intent(ReceptionMenue.this, AllRservationActivity.class);
                         startActivity(intent2);
                         break;
+                    case 3:
+                        Intent intent3 = new Intent(ReceptionMenue.this, SearchRoomActivity.class);
+                        startActivity(intent3);
+                        break;
                 }
             }
         };
