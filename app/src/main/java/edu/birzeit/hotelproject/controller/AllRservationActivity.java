@@ -38,7 +38,7 @@ public class AllRservationActivity extends AppCompatActivity {
     String url = "http://10.0.2.2:80/hotalAppBackend/controllers/bookingController/get.php";
     List<Reservations>books=new ArrayList<>();//this is will use in Recycler view.
     private RecyclerView recycler;
-    List<Reservations>list= new ArrayList<>();
+    List<Reservations> list= new ArrayList<>();
 
 
     @Override
