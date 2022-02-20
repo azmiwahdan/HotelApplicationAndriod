@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".MainActivity">
+    tools:context=".controller.Forget2Activity">
 
     <TextView
         android:id="@+id/textTitle"
@@ -44,18 +43,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/Welcome_to_Hotel"
+                android:text="Conformation password"
                 android:textColor="@color/colorPrimary"
                 android:textSize="29sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:text="@string/please_sign_in_to_continue"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="15sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -65,7 +56,7 @@
                 >
 
                 <LinearLayout
-                    android:id="@+id/username_text"
+                    android:id="@+id/passwd"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="30dp"
@@ -87,10 +78,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@null"
-                        android:hint="johndoe"
+                        android:hint="********"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:inputType="text"
+                        android:inputType="textPassword"
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:paddingStart="15dp"
@@ -105,13 +96,13 @@
                     android:background="@color/colorWhite"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/username"
+                    android:text="Password"
                     android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
-                    app:layout_constraintBottom_toTopOf="@id/username_text"
+                    app:layout_constraintBottom_toTopOf="@id/passwd"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/username_text"
+                    app:layout_constraintTop_toTopOf="@id/passwd"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -123,7 +114,7 @@
                 android:layout_marginEnd="40dp">
 
                 <LinearLayout
-                    android:id="@+id/password_text"
+                    android:id="@+id/passwd_conf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
@@ -137,11 +128,11 @@
                         android:layout_height="25dp"
                         android:layout_marginStart="15dp"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_of_lock_"
+                        android:src="@drawable/ic_of_account_"
                         app:tint="@color/colorAccent" />
 
                     <EditText
-                        android:id="@+id/passwordId"
+                        android:id="@+id/password_conf_Id"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@null"
@@ -163,72 +154,40 @@
                     android:background="@color/colorWhite"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/password"
+                    android:text="confirm password"
                     android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
-                    app:layout_constraintBottom_toTopOf="@id/password_text"
+                    app:layout_constraintBottom_toTopOf="@id/passwd_conf"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/password_text"
+                    app:layout_constraintTop_toTopOf="@id/passwd_conf"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/forget_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="30dp"
-                android:text="@string/forgot_password"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:onClick="forgetPage"
-                android:textColor="@color/colorPrimary"/>
+                />
 
             <Button
                 android:layout_width="match_parent"
-                android:id="@+id/btn_signin"
+                android:id="@+id/submit_btn"
                 android:layout_height="60dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
-                android:text="Sign in"
+                android:text="submit"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorWhite"
-                android:onClick="signin_btn"
                 android:background="@drawable/background_btn"
+                android:onClick="goToLogin"
                 />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/don_t_have_an_account"
-                    android:textSize="15sp"
-                    android:textStyle="italic"
-                    android:textColor="@color/colorTextSecondary" />
-
-                <TextView
-                    android:id="@+id/text_create_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
-                    android:text="@string/create_new_account"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary" />
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
